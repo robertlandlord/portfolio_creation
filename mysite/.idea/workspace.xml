@@ -5,26 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e86a75f-771f-476e-b394-425ad23fa066" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/templates/portfolio/get_info_stock_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/Pls read, Module not ours" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/SimpleSymbolDownloader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/Symbol.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/downloader/GenericDownloader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/downloader/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/symbols/Generic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio/ytd/symbols/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/efficient_frontier.png" beforeDir="false" afterPath="$PROJECT_DIR$/efficient_frontier.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personal/templates/personal/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/personal/templates/personal/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/personal/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/personal/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/templates/portfolio/find_stock_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/templates/portfolio/find_stock_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/templates/plot/plot.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/views - Copy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/views.py" afterDir="false" />
     </list>
@@ -48,11 +38,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portfolio/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            <state relative-caret-position="204">
+              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portfolio/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="86" lean-forward="true" selection-start-line="15" selection-start-column="86" selection-end-line="15" selection-end-column="86" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
@@ -135,13 +128,13 @@
         <option value="$PROJECT_DIR$/portfolio/templates/portfolio/find_stock_form.html" />
         <option value="$PROJECT_DIR$/portfolio/templates/portfolio/get_info_stock_form.html" />
         <option value="$PROJECT_DIR$/personal/views.py" />
-        <option value="$PROJECT_DIR$/portfolio/views.py" />
         <option value="$PROJECT_DIR$/personal/urls.py" />
         <option value="$PROJECT_DIR$/portfolio/urls.py" />
+        <option value="$PROJECT_DIR$/portfolio/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="width" value="960" />
     <option name="height" value="1080" />
   </component>
@@ -162,43 +155,7 @@
             <path>
               <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="personal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -273,16 +230,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543725006750</updated>
-      <workItem from="1544934097924" duration="1976000" />
+      <workItem from="1544934097924" duration="2795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1976000" />
+    <option name="totallyTimeSpent" value="2795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13326226" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -542,10 +498,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portfolio/views.py">
+    <entry file="file://$PROJECT_DIR$/portfolio/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#1#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -559,12 +518,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portfolio/urls.py">
+    <entry file="file://$PROJECT_DIR$/plot/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="86" lean-forward="true" selection-start-line="15" selection-start-column="86" selection-end-line="15" selection-end-column="86" />
+        <state>
           <folding>
-            <element signature="e#1#20#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portfolio/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

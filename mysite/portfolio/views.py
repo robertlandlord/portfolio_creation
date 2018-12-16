@@ -2,13 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from .forms import *
 import quandl
-# import datetime as dt
-# from rest_framework.views import APIView
-# import pandas as pd
-# from rest_framework.response import Response
-# from yahoo_fin.stock_info import *
 from .ytd import SimpleSymbolDownloader
-# Create your views here.
 from personal.forms import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
