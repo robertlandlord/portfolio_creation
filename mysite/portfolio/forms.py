@@ -12,9 +12,11 @@ class AddStockForm(forms.Form):
     stock_to_add = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Ticker'}))
     fields = ['stock_to_add']
 
-    # class Meta:
-    #     model = Portfolio
-    #     fields =
+
 class FindStockForm(forms.Form):
+    stock_to_find = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Company Name'}))
+    fields = ['stock_to_find']
+
+class GetStockInfoForm(forms.Form):
     stock_to_find = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Ticker'}))
     fields = ['stock_to_find']

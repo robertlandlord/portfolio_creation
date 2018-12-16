@@ -1,5 +1,5 @@
 {% extends "personal/header.html" %}
-{% block title %}Get a stock's ticker!{% endblock %}
+{% block title %}Get Stock Information! {% endblock %}
 <script>
 
 </script>
@@ -9,7 +9,7 @@
                 <div class="col-sm-12 col-md-7">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                        <h3>Find a Stock</h3>
+                        <h3>Get Stock Information</h3>
                             {% if error_message %}
                                 <p><strong>{{error_message|safe|linebreaks}}</strong></p>
                             {% endif %}
@@ -18,7 +18,7 @@
                                 {% include 'personal/form-template.html' %}
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-success">Find Company Ticker!</button>
+                                        <button type="submit" class="btn btn-success">Get stock information!</button>
                                     </div>
                                 </div>
                             </form>

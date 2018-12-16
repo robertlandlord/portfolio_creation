@@ -23,11 +23,5 @@ urlpatterns = [
     re_path(r'^login/$', views.LoginFormView.as_view() , name='login'), #login
     re_path(r'^logout/$',views.logout_user, name='logout'), #logout (redirects, just used as function)
     re_path(r'^password_change/$',views.PassChangeFormView.as_view(), name='pass_change'), # password changing
-    re_path(r'^liquidate/$',views.LiquidateFormView.as_view(),name='liquidate'), #liquidating portfolio
-    re_path(r'^api/chart/data/returns/$', views.ReturnChartData.as_view(), name='api-chart-data-returns'), #below are all info-sending JSON apis
-    re_path(r'^api/chart/data/markowitz/$', views.MarkowitzChartData.as_view(), name='api-chart-data-markowitz'),
-    re_path(r'^api/chart/data/returntable/$', views.ReturnTableData.as_view(), name='api-return-data'),
-    re_path(r'^api/chart/data/returnrank/$', views.ReturnRankingData.as_view(), name='api-return-data'),
-    re_path(r'^api/chart/data/earnings/$', views.EarnerRankingData.as_view(), name='api-earnings-data'),
 
 ]
