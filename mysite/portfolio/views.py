@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from .forms import *
-import quandl
 from .ytd import SimpleSymbolDownloader
 from personal.forms import *
 from rest_framework.views import APIView
