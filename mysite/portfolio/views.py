@@ -38,25 +38,25 @@ class AddStockFormView(View):
 
             user_portfolio = Portfolio.objects.get(user=user) #get portfolio associated with account
             stock = form.cleaned_data['stock_to_add']
-            quandl.ApiConfig.api_key = 'fLUd1xbG8hjz3vMutU_s'
-            data = quandl.get_table('WIKI/PRICES', ticker=stock,
-                                    qopts={'columns': ['date', 'ticker', 'adj_close']},
-                                    date={'gte': '2016-1-1', 'lte': dt.datetime.today().strftime('%Y-%m-%d')},
-                                    paginate=True)
 
             list_of_stocks = user_portfolio.stocks
-            if not data.empty:
-                if stock not in list_of_stocks: #if stock wasn't already part of portfolio
+            try:
+                week_ago = '01/01/2017'
+                today = dt.date.today().strftime('%m-%d-%Y')
+                data = get_data(stock, start_date=week_ago, end_date=today, index_as_date=True) #used for invalid stock finding
+                if stock not in list_of_stocks:  # if stock wasn't already part of portfolio
                     user_portfolio.stocks.append(stock)
                     user_portfolio.save()
                     return redirect('index')
-                else: #if it was already in the portfolio
+                else:  # if it was already in the portfolio
                     return render(request, self.template_name,
                                   {'error_message': "<ul class='errorlist'> <li> Stock already in Portfolio! </li> </ul>",
                                    'form': form})
-            else:
-                return render(request, self.template_name, {'error_message': "<ul class='errorlist'> <li> Ticker not found! </li> </ul>",
-                                   'form': form})
+            except: # if get_data returned a ValueError (or any error)
+                return render(request, self.template_name,
+                              {'error_message': "<ul class='errorlist'> <li> Ticker not found! </li> </ul>",
+                               'form': form})
+
         return render(request, self.template_name, {'form': form})
 
 class FindStockFormView(APIView):
@@ -74,7 +74,6 @@ class FindStockFormView(APIView):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-            quandl.ApiConfig.api_key = 'fLUd1xbG8hjz3vMutU_s'
             stock = form.cleaned_data['stock_to_find']
 
             searcher = SimpleSymbolDownloader.SymbolDownloader("generic", str(stock))
@@ -109,20 +108,16 @@ class GetStockInfoFormView(APIView):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-            quandl.ApiConfig.api_key = 'fLUd1xbG8hjz3vMutU_s'
             stock = form.cleaned_data['stock_to_find']
             today = dt.date.today().strftime('%m-%d-%Y')
             week_ago = (dt.date.today() - dt.timedelta(days=7)).strftime('%m-%d-%Y')
-            checker = quandl.get_table('WIKI/PRICES', ticker=stock,
-                                    qopts={'columns': ['date', 'ticker', 'adj_close']},
-                                    date={'gte': '2016-1-1', 'lte': dt.datetime.today().strftime('%Y-%m-%d')},
-                                    paginate=True)
-            if not checker.empty:
+            try:
                 result = get_data(stock, start_date=week_ago, end_date=today, index_as_date=True)
                 return render(request, self.template_name, {'form':form,'dataset': result.to_html(classes=["table", "table-bordered", "table-striped", "table-hover"]), 'label':stock.upper()})
-            else:
-                return render(request, self.template_name, {'error_message': "<ul class='errorlist'> <li> Ticker not found! </li> </ul>",
-                                   'form': form, 'label': "", 'dataset': ""})
+            except:
+                return render(request, self.template_name,
+                              {'error_message': "<ul class='errorlist'> <li> Ticker not found! </li> </ul>",
+                                       'form': form, 'label': "", 'dataset': ""})
 
         return render(request, self.template_name, {'form': form})
 
@@ -174,13 +169,13 @@ class MarkowitzChartData(APIView):
             labels = stocklist
 
             today = dt.date.today().strftime('%m-%d-%Y')
-            print(str(today))
+            start_date = '01/01/2017'
             table = pd.DataFrame()
-            data = get_data(stocklist[0], start_date='01/01/2016', end_date=today, index_as_date=False)
+            data = get_data(stocklist[0], start_date=start_date, end_date=today, index_as_date=False)
             dates = data["date"][::-1]
 
             for stock in stocklist:
-                data = get_data(stock, start_date='01/01/2016', end_date=today, index_as_date=False)['adjclose'][
+                data = get_data(stock, start_date=start_date, end_date=today, index_as_date=False)['adjclose'][
                        ::-1]
                 table[stock.upper()] = pd.Series(data)
             table.set_index(dates, 'date', inplace=True)
