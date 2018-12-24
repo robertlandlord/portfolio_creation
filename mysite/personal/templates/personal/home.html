@@ -29,29 +29,6 @@
             data: {
                 labels: dates,
 				datasets:[]
-				/*
-                datasets: [{
-                    label: '# of Votes',
-                    data: [],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 2
-                }]
-				*/
             },
             options: {
                 scales: {
@@ -147,10 +124,34 @@
          var sharpe_allocations = []
          var vol_allocations = []
          var num_stocks = Object.keys(max_sharpe_allocation).length
+         var baseBackgroundColorArr = [
+              'rgba(255, 99, 132, 0.2)',
+             'rgba(54, 162, 235, 0.2)',
+             'rgba(255, 206, 86, 0.2)',
+             'rgba(75, 192, 192, 0.2)',
+             'rgba(153, 102, 255, 0.2)',
+             'rgba(255, 159, 64, 0.2)'
+         ]
+         var baseBorderColorArr = [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+            ]
+         var toBePushedBackgroundArr = []
+         var toBePushedBorderArr = []
          for(var i = 0; i< num_stocks; i++){
             sharpe_allocations.push(max_sharpe_allocation[labels[i].toUpperCase()])
             vol_allocations.push(min_vol_allocation[labels[i].toUpperCase()])
+            toBePushedBackgroundArr.push(baseBackgroundColorArr[i%6])
+            toBePushedBorderArr.push(baseBorderColorArr[i%6])
          }
+
+
+
+
 
          var ctx = document.getElementById("mySharpeChart").getContext('2d')
          var ctx2 = document.getElementById("myVolChart").getContext('2d')
@@ -160,22 +161,8 @@
                 labels: labels,
 				datasets:[{
 				    data: sharpe_allocations,
-				    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-					'rgba(255,99,132,1)',
-					'rgba(54, 162, 235, 1)',
-					'rgba(255, 206, 86, 1)',
-					'rgba(75, 192, 192, 1)',
-					'rgba(153, 102, 255, 1)',
-					'rgba(255, 159, 64, 1)'
-				    ],
+				    backgroundColor:toBePushedBackgroundArr,
+                    borderColor: toBePushedBorderArr,
 				    borderWidth: 1,
 				}]
             },
@@ -193,22 +180,8 @@
                 labels: labels,
 				datasets:[{
 				    data: vol_allocations,
-				    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-					'rgba(255,99,132,1)',
-					'rgba(54, 162, 235, 1)',
-					'rgba(255, 206, 86, 1)',
-					'rgba(75, 192, 192, 1)',
-					'rgba(153, 102, 255, 1)',
-					'rgba(255, 159, 64, 1)'
-				    ],
+				    backgroundColor: toBePushedBackgroundArr,
+                    borderColor:toBePushedBorderArr,
 				    borderWidth: 1,
 				}]
             },

@@ -12,6 +12,7 @@ import scipy.optimize as sco
 import datetime as dt
 from yahoo_fin.stock_info import *
 
+
 #similar to the other forms, just this one is for adding to the portfolio objects
 class AddStockFormView(View):
     form_class = AddStockForm
