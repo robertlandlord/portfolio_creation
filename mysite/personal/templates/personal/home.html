@@ -103,13 +103,13 @@
             max_sharpe_allocation = data.max_sharpe_allocation
             max_sharpe_ret = data.max_sharpe_ret
             max_sharpe_vol = data.max_sharpe_vol
-            document.getElementById('sharpe-ret').innerHTML += (max_sharpe_ret*100).toString() + '%'
-            document.getElementById('sharpe-vol').innerHTML += (max_sharpe_vol*100).toString() + '%'
+            document.getElementById('sharpe-ret').innerHTML += (Math.round(max_sharpe_ret*10000)/100).toString() + '%'
+            document.getElementById('sharpe-vol').innerHTML += (Math.round(max_sharpe_vol*10000)/100).toString() + '%'
             min_vol_allocation = data.min_vol_allocation
             min_vol_ret = data.min_vol_ret
             min_vol_vol = data.min_vol_vol
-            document.getElementById('vol-ret').innerHTML += (min_vol_ret*100).toString() + '%'
-            document.getElementById('vol-vol').innerHTML += (min_vol_vol*100).toString() + '%'
+            document.getElementById('vol-ret').innerHTML += (Math.round(min_vol_ret*10000)/100).toString() + '%'
+            document.getElementById('vol-vol').innerHTML += (Math.round(min_vol_vol*10000)/100).toString() + '%'
 
             markowitzChart()
         },
